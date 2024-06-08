@@ -10,6 +10,11 @@ export class DiscordService {
 
         const body = {
             content: message,
+            embeds: [
+                {
+                    image: { url: '' }
+                }
+            ]
         }
 
         const resp = await fetch(this.discordWebhookUrl, {
