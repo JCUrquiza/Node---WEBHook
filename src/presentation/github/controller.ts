@@ -6,8 +6,12 @@ export class GithubController {
 
     webhookHandler = (req: Request, res: Response) => {
 
+        const githubEvent = req.header('x-github-event') ?? 'unknown';
+        const payload = req.body;
 
-        res.json('Hecho');
+        
+        
+        res.status(202).json('Hecho');
     }
 
 }

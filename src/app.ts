@@ -12,6 +12,9 @@ function main() {
     const app = express();
     const controller = new GithubController();
 
+    // Middleware
+    app.use(express.json());
+
     app.post('/api/github', controller.webhookHandler);
 
     app.listen( envs.PORT, () => {
