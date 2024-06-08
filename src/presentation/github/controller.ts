@@ -18,6 +18,9 @@ export class GithubController {
             case 'star':
                 message =  this.githubService.onStart(payload);
                 break;
+            case 'issue':
+                message =  this.githubService.onIssue(payload);
+                break;
             default:
                 message = `Unknown event ${ githubEvent }`;
         }
